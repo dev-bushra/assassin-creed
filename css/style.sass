@@ -1,0 +1,180 @@
+$main-color: #fd3e65
+$main-gradient: linear-gradient(60deg, #fd3fb3 , #fd3e65 , #fd3e4f)    
+@fontface 
+    src: url('../fonts/Poppins-Regular.ttf')
+    font-family: 'Poppins'
+
+@fontface 
+    src: url('../fonts/Poppins-Bold.ttf')
+    font-family: 'Poppins-Bold'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: 'Poppins' , arial
+    line-height: 1.4
+    min-height: 300vh
+    font-size: 16px
+    overflow-x: hidden
+    
+h1,h2,h3,h4,h5,h6
+    font-family: 'Poppins-Bold' , arial
+    font-weight: bold
+
+span,strong
+    color: $main-color !important
+
+strong
+    font-weight: bold
+
+section
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.5)
+    z-index: 0
+
+// Buttons
+.btn
+    background: $main-gradient
+    font-weight: bold
+    text-transform: capitalize
+.btn-outline-white
+    background: transparent !important
+    box-shadow: none
+    border: 3px solid #fff
+    
+//  Navbar
+.navbar
+    font-weight: bold
+    .nav-link
+        font-size: 14px
+    .social-links
+        font-weight: bold
+        font-size: 1.2em
+        i
+            margin: 0 .5rem
+            color: #fff
+
+#hero
+    background: url('../images/bg.png') center /cover
+    .container
+        position: relative
+        z-index: 2
+        color: #fff
+
+
+#about 
+    padding: 3rem 0
+    background: $main-gradient
+    color: #fff
+    min-height: 60vh
+    line-height: 1.8
+    .btn 
+        color: #fff
+        margin-top: 2rem
+        margin-left: auto
+        &:hover
+            color: #333 !important
+
+#services
+    min-height: 50vh
+    .col-sm-6.col-md-4
+        padding: 0 !important
+    .card
+        height: 50vh
+        border-radius: 0
+        .card-body
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            align-items: start
+            h4 , p 
+                position: relative
+                z-index: 1
+            .display-1
+                position: absolute
+                left: 20%
+                top: 65%
+                transform: translate(-50%,-50%)
+                z-index: 0
+                color: rgba($main-color, 0.4)
+                transition: all .3s ease-in-out
+        &:hover
+            background: $main-gradient
+            color: #fff
+            .display-1
+                position: relative
+                left: auto
+                top: auto
+                transform: translate(0%,0%)
+                z-index: 1
+                color: #fff
+
+#team
+    padding: 4rem 0
+    h3
+        margin-bottom: 2rem
+    .card 
+        overflow: hidden
+        .card-title
+            font-weight: bold
+        .overlay
+            background: rgba($main-color,0.9)
+            top: 65%
+            height: 17.5%
+            display: flex
+            justify-content: center
+            align-items: center
+            transition: all .4s linear
+            transform: translateX(-110%)
+            a
+                margin: 0 1rem
+                color: #fff
+        &:hover
+            .overlay
+                transform: translateX(0)
+
+#work
+    margin: 3rem 0
+
+#clients
+    padding: 3rem 0
+    background: #f5f5f5
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    .card
+        height: 100vh
+
+
+@media screen and ( max-width:  768px)
+    #menu
+        background: $main-gradient !important
+    body
+        font-size: 12px
+    #about,#services,#clients,#team
+        padding: 1rem auto !important
+        margin: 1rem auto !important
+    #services
+        .card
+            padding: 1rem
+            margin: 0
+            justify-content: center
